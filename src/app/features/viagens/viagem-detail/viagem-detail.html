@@ -1,0 +1,28 @@
+<section class="detail-container">
+  @if (loading){
+  <p>Carregando detalhes do pacote...</p>
+  }
+
+  @if (errorMessage){
+  <div class="error">
+    {{ errorMessage }}
+  </div>
+  }
+
+  @if (viagem){
+  <div class="detail-card">
+    <img [src]="viagem.imagem" [alt]="viagem.destino">
+    <div class="content">
+      <h2>{{ viagem.destino }}</h2>
+      <p><strong>Duração: </strong>{{ viagem.duracao }}</p>
+      <p><strong>Preço: </strong>R$ {{ viagem.preco }}</p>
+      <p><strong>Tipo: </strong>{{ viagem.tipoViagem }}</p>
+      <p><strong>Descrição: </strong>{{ viagem.descricao }}</p>
+
+      <a routerLink="/viagens" class="back-btn">
+        Voltar para a listagem
+      </a>
+    </div>
+  </div>
+  }
+</section>

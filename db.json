@@ -1,0 +1,38 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "email": ""
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "titulo": "Poeira em alto mar",
+      "descricao": "Um filme incrivel",
+      "categoria": "Terror",
+      "duracao": "120 min",
+      "url": "https://www.youtube.com/watch?v=ZtLh8qjQe9o",
+      "miniatura": "teste.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "O Exorcista",
+      "descricao": "Um filme abençoado",
+      "categoria": "Comédia",
+      "duracao": "120 min",
+      "url": "https://www.youtube.com/watch?v=ZtLh8qjQe9o",
+      "miniatura": "teste.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "O Iluminado",
+      "descricao": "Um filme claro",
+      "categoria": "Musical",
+      "duracao": "120 min",
+      "url": "https://www.youtube.com/watch?v=ZtLh8qjQe9o",
+      "miniatura": "teste.jpg"
+    }
+  ]
+}

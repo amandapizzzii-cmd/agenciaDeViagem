@@ -1,0 +1,20 @@
+.footer {
+  background: linear-gradient(90deg, #0066cc 0%, #0052a3 100%);
+  text-align: center;
+  padding: 24px 16px;
+  color: #e0e0e0;
+  margin-top: 40px;
+  border-top: 3px solid #ffd700;
+  font-weight: 500;
+  box-shadow: 0 -4px 12px rgba(0, 102, 204, 0.1);
+}
+
+.footer::before {
+  content: '🌍 ';
+  margin-right: 8px;
+}
+
+.footer::after {
+  content: ' 🌍';
+  margin-left: 8px;
+}

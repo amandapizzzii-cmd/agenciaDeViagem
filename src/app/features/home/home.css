@@ -1,0 +1,81 @@
+.hero {
+  max-width: 900px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 60px 48px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 102, 204, 0.1);
+  border-left: 6px solid #0066cc;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 16px;
+  color: #0066cc;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hero h1::before {
+  content: '🌍 ';
+}
+
+.hero p {
+  color: #555;
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.35);
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn.secondary {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+  color: #0066cc;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+  border: 2px solid #0066cc;
+}
+
+.btn.secondary:hover {
+  background: linear-gradient(135deg, #e8eef5 0%, #dce5f0 100%);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}

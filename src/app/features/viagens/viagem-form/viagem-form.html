@@ -1,0 +1,95 @@
+<div class="form-box">
+  <h2>
+    @if (editingId !== null) {
+    Editar pacote de viagem
+    } @else {
+    Cadastro de viagem
+    }
+  </h2>
+
+  @if (loadingData){
+  <div class="info-message">
+    Carregando dados da viagem...
+  </div>
+  }
+  @if (successMessage) {
+  <div class="success-message">
+    {{ successMessage }}
+  </div>
+  }
+  @if (errorMessage) {
+  <div class="error-message">
+    {{ errorMessage }}
+  </div>
+  }
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label for="destino">Destino</label>
+      <input id="destino" type="text" formControlName="destino" placeholder="Ex: Paris, França" />
+
+      @if (form.controls.destino.touched && form.controls.destino.invalid) {
+      <small>Informe um destino com no mínimo 3 caracteres.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="duracao">Duração</label>
+      <input id="duracao" type="text" formControlName="duracao" placeholder="Ex: 7 dias" />
+
+      @if (form.controls.duracao.touched && form.controls.duracao.invalid) {
+      <small>A duração é obrigatória.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="preco">Preço (R$)</label>
+      <input id="preco" type="number" formControlName="preco" />
+
+      @if (form.controls.preco.touched && form.controls.preco.invalid) {
+      <small>O preço é obrigatório e deve ser maior que zero.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="tipoViagem">Tipo de Viagem</label>
+      <input id="tipoViagem" type="text" formControlName="tipoViagem" placeholder="Ex: Lazer, Negócios, Aventura" />
+
+      @if (form.controls.tipoViagem.touched && form.controls.tipoViagem.invalid) {
+      <small>O tipo de viagem é obrigatório.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="descricao">Descrição do Pacote</label>
+      <textarea id="descricao" formControlName="descricao"></textarea>
+      <span class="character-count">
+        {{ form.controls.descricao.value.length }} caracteres
+      </span>
+
+      @if (form.controls.descricao.touched && form.controls.descricao.invalid) {
+      <small>Informe uma descrição com no mínimo 10 caracteres.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="imagem">URL da Imagem</label>
+      <input id="imagem" type="text" formControlName="imagem" />
+
+      @if (form.controls.imagem.touched && form.controls.imagem.invalid) {
+      <small>A URL da imagem é obrigatória.</small>
+      }
+    </div>
+
+    <button type="submit" [disabled]="loading || loadingData">
+      @if (loading) {
+      Salvando...
+      } @else if (editingId !== null) {
+      Atualizar Pacote
+      } @else {
+      Salvar Pacote
+      }
+    </button>
+  </form>
+</div>

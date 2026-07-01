@@ -1,0 +1,15 @@
+<section class="hero">
+  <h1>Bem vindo à Agência de Viagens</h1>
+  <p>Encontre os melhores destinos e pacotes para sua próxima aventura!</p>
+  <div class="actions">
+    @if(autenticado){
+    <a routerLink="/viagens" class="btn">
+      Ver pacotes
+    </a>
+    } @else {
+    <a routerLink="/login" class="btn">
+      Fazer login
+    </a>
+    }
+  </div>
+</section>

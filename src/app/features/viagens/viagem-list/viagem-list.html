@@ -1,0 +1,52 @@
+<section class="list-box">
+  <div class="top-bar">
+    <h2>Pacotes de Viagem</h2>
+    <a routerLink="/cadastrar-viagem" class="btn">Novo Pacote</a>
+  </div>
+
+  @if (successMessage) {
+  <div class="success-message">
+    {{ successMessage }}
+  </div>
+  }
+  @if (errorMessage) {
+  <div class="error-message">
+    {{ errorMessage }}
+  </div>
+  }
+  @if (loading) {
+  <div class="loading">
+    <p>Carregando pacotes...</p>
+  </div>
+  }
+
+  @if (!loading && viagens.length === 0){
+  <div class="empty-state">
+    <p>Nenhum pacote de viagem cadastrado até o momento.</p>
+  </div>
+  }
+
+  <div class="video-grid">
+    @for (viagem of viagens; track viagem.id){
+    <div class="video-item">
+      <h3>{{ viagem.destino }}</h3>
+      <p><strong>Duração: </strong>{{ viagem.duracao }}</p>
+      <p><strong>Preço: </strong>R$ {{ viagem.preco }}</p>
+      <p><strong>Tipo: </strong>{{ viagem.tipoViagem }}</p>
+      <p><strong>Descrição: </strong>{{ viagem.descricao }}</p>
+
+      <div class="actions">
+        <button type="button" class="detail-btn" (click)="detail(viagem.id)">
+          Detalhes
+        </button>
+        <button type="button" class="edit-btn" (click)="edit(viagem.id)">
+          Editar
+        </button>
+        <button type="button" class="delete-btn" (click)="remove(viagem.id)">
+          Excluir
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>
